@@ -1,7 +1,3 @@
-# Guard
-
-Type guards for typescript.
-
 <a href="https://www.typescriptlang.org/">
   <img
     src="https://raw.githubusercontent.com/typescript-package/core/refs/heads/main/ts-package-barcode-logo-512.png"
@@ -33,68 +29,48 @@ Type-safe guards for validating value types in TypeScript.
 ## Installation
 
 ```bash
-npm install @typescript-package/is
+npm install @typescript-package/guard
 ```
 
 ## Api
 
 ```typescript
-// Prefixed `is` functions.
 import {
-  isArray,
-  isBigInt,
-  isBoolean,
-  isBooleanObject,
-  isBooleanType,
-  isClass,
-  isDate,
-  isDefined,
-  isFalse,
-  isFunction,
-  isInstance,
-  isKey,
-  isNull,
-  isNumber,
-  isNumberBetween,
-  isNumberObject,
-  isNumberType,
-  isObject,
-  isObjectKey,
-  isObjectKeyIn,
-  isObjectKeys,
-  isObjectKeysIn,
-  isObjectSomeKeys,
-  isPrimitive,
-  isRegExp,
-  isString,
-  isStringIncludes,
-  isStringIncludesSome,
-  isStringLength,
-  isStringLengthBetween,
-  isStringObject,
-  isStringType,
-  isSymbol,
-  isTrue,
-  isType,
-  isUndefined,
-} from '@typescript-package/is';
+  // `guard` object.
+  guard,
 
-// `is` object.
-export { is } from './lib/is.object';
-
-// Prefixed `isNot` functions.
-export {
-  isNotBoolean,
-  isNotDefined,
-  isNotFunction,
-  isNotNull,
-  isNotNumber,
-  isNotString,
-  isNotUndefined
-} from './not';
-
-// `isNot` object.
-export { isNot } from './not';
+  // Prefixed `guard` functions.
+  guardArray,
+  guardBigInt,
+  guardBoolean,
+  guardClass,
+  guardDate,
+  guardDefined,
+  guardFalse,
+  guardFunction,
+  guardInstance,
+  guardKey,
+  guardNull,
+  guardNumber,
+  guardNumberBetween,
+  guardObject,
+  guardObjectKey,
+  guardObjectKeyIn,
+  guardObjectKeys,
+  guardObjectKeysIn,
+  guardObjectSomeKeys,
+  guardPrimitive,
+  guardRegExp,
+  guardString,
+  guardStringIncludes,
+  guardStringIncludesSome,
+  guardStringLength,
+  guardStringLengthBetween,
+  guardSymbol,
+  guardTrue,
+  guardType,
+  guardUndefined
+} from '@typescript-package/guard';
 ```
 
 ## GIT
