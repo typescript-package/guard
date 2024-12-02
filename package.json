@@ -1,0 +1,42 @@
+{
+  "name": "@testing-package/guard",
+  "version": "1.0.0",
+  "author": "wwwdev.io <dev@wwwdev.io>",
+  "description": "Type-safe guards for validating value types in TypeScript.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@angular-package/testing": "^2.0.0-rc"
+  },
+  "peerDependencies": {
+    "@typescript-package/core": "^1.0.0",
+    "@typescript-package/is": "^1.0.0",
+    "@typescript-package/type": "^1.1.0"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run pkg && npm run clean",
+    "pkg": "npm pkg delete dependencies",
+    "clean": "npm pkg delete scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typescript-package/guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-package/guard/issues"
+  },
+  "keywords": [
+    "@typescript-package",
+    "@typescript-package/guard"
+  ],
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://checkout.revolut.com/pay/048b10a3-0e10-42c8-a917-e3e9cb4c8e29"
+    }
+  ],
+  "sideEffects": false
+}
