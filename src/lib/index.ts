@@ -1,3 +1,6 @@
+// `guard` object.
+export { guard } from './guard.object';
+// `guard` prefixed functions.
 export { guardArray } from './guard-array.func';
 export { guardBigInt } from './guard-big-int.func';
 export { guardBoolean } from './guard-boolean.func';
