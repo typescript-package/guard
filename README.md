@@ -8,7 +8,7 @@
 
 ## typescript-package/guard
 
-Type-safe guards for guarding value types in TypeScript.
+Type-safe guards for guarding the value types in TypeScript.
 
 <!-- npm badge -->
 [![npm version][typescript-package-npm-badge-svg]][typescript-package-npm-badge]
@@ -85,7 +85,7 @@ import {
 
 Benefits of properly using the guards.
 
-1. Development, compile and runtime **validation**.
+1. Development, compile, and runtime **validation**.
     * Development-time **validation** ensures the developer can only provide a specific type through the static typing in the IDE.
     * Compile-time **validation** performs static analysis during compilation, ensuring no type violations are present in the code.
     * Runtime **validation** confirms the type of a value at runtime, useful when working with data from external sources (e.g., APIs, user inputs).
@@ -96,19 +96,19 @@ Benefits of properly using the guards.
 
 3. Error **reduction** and **prevention**.
     * **Error reduction** by combining static analysis and runtime checks.
-    * **Error prevention** by combining runtime validation with compile-time type checks reduces the risk of runtime errors due to unexpected types.
+    * **Error prevention** by combining runtime validation with compile-time type checks reducing the risk of runtime errors due to unexpected types.
 
 4. **Enhanced code clarity** by reducing ambiguity in data types.
 
 5. **Enhanced application reliability** by ensuring unvalidated data does not cause severe issues.
 
-6. **Type safety layer** by ensuring handle of unexpected or invalid data.
+6. **Type safety layer** by ensuring the handling of unexpected or invalid data.
 
 ## Type
 
 ### Enforce
 
-A type enforce uses static typing to ensure only allowed types can be passed, and uses TypeScript's compile-time checks to enforce correctness.
+A type enforce uses static typing to ensure only allowed types can be passed, and uses TypeScript's compile-time static analysis to enforce correctness.
 
 **Role**: A development and compile-time type restrictor and enforcer.  
 **Scope**: Development and compile-time.  
@@ -126,7 +126,9 @@ v       | v        | x     |
 Example:
 
 ```typescript
-const acceptNumber = (value: number): void => {
+const acceptNumber = (
+  value: number // type enforce/restrict
+): void => {
   console.log(value);
 };
 
@@ -162,11 +164,11 @@ Operate only at runtime, allowing validation of dynamically-typed or unknown val
 
 Enforce | Restrict | Check |
 ------- | -------- | ----- |
-o       | o        | v     |
+x       | x        | v     |
 
 ### Guard
 
-Combine development, and compile-time restriction with runtime validation, ensures the type of a value matches the expected type on any time, ensuring stricter enforcement of types.
+Combine development, and compile-time restriction with runtime validation, ensures the value type matches the expected type on any time, ensuring stricter enforcement of types.
 
 **Role**: A development, compile, and run-time type restrictor and enforcer.  
 **Scope**: Development, compile, and run-time.  
