@@ -88,7 +88,7 @@ Benefits of properly using the guards.
 1. Development, compile and runtime **validation**.
     * Development-time **validation** ensures the developer can only provide a specific type through the static typing in the IDE.
     * Compile-time **validation** performs static analysis during compilation, ensuring no type violations are present in the code.
-    * Runtime **validation** confirms the type of a value at runtime, especially useful when working with data from external sources (e.g., APIs, user inputs).
+    * Runtime **validation** confirms the type of a value at runtime, useful when working with data from external sources (e.g., APIs, user inputs).
 
 2. Type-safe code.
     * **Validates** external or dynamic data at runtime.
@@ -110,14 +110,18 @@ Benefits of properly using the guards.
 
 A type enforce uses static typing to ensure only allowed types can be passed, and uses TypeScript's compile-time checks to enforce correctness.
 
-**Role**: A development and compile-time type restrictor and enforcer.
-**Scope**: Development and compile-time.
+**Role**: A development and compile-time type restrictor and enforcer.  
+**Scope**: Development and compile-time.  
 **Purpose**:
 
 * Development and compile-time type **restriction** and **enforcement**.
-* **Disallows** invalid types at development and compile-time, but doesn't inherently perform runtime checks, that is performed in the type checking.
+* **Enforces** type restrictions during development (via IDE feedback) and compile-time.
 * **Ensures** that only values of the specified type can be used before runtime.
-* **Enforces** type restrictions during development (via IDE feedback) and compile-time. // (via static analysis).
+* **Disallows** invalid types at development and compile-time, but doesn't perform runtime checks, that is performed in the type checking.
+
+Enforce | Restrict | Check |
+------- | -------- | ----- |
+v       | v        | x     |
 
 Example:
 
@@ -132,7 +136,7 @@ acceptNumber("42"); // x Development and compile-time error
 
 ### Indicate
 
-Type indicate as the name suggest indicates the value type resulting in `boolean` type.
+Indicates as an expression `value is type` the value is of the specified type resulting in a `boolean` type.
 
 Example:
 
@@ -147,34 +151,34 @@ const isNumber = (
 
 ### Check
 
-Operate only at runtime, allowing flexible validation of dynamically-typed or unknown values.
+Operate only at runtime, allowing validation of dynamically-typed or unknown values.
 
-**Role**: Runtime checker.
-**Scope**: Runtime only.
+**Role**: Runtime checker.  
+**Scope**: Runtime only.  
 **Purpose**:
 
 * **Checks** whether a given value is of a specific type during execution.
 * Used to create the type narrow.
 
-**Enforce**: o
-**Restrict**: o
-**Check**: v
+Enforce | Restrict | Check |
+------- | -------- | ----- |
+o       | o        | v     |
 
 ### Guard
 
 Combine development, and compile-time restriction with runtime validation, ensures the type of a value matches the expected type on any time, ensuring stricter enforcement of types.
 
-**Role**: A development, compile, and run-time type restrictor and enforcer.
-**Scope**: Development, compile, and run-time.
+**Role**: A development, compile, and run-time type restrictor and enforcer.  
+**Scope**: Development, compile, and run-time.  
 **Purpose**:
 
 * **Ensures** the developer can only provide a specific type through the static typing.
 * **Enforces** type restrictions during development (via IDE feedback) and compile-time.
 * **Checks** whether a given value is of a specific type during execution.
 
-**Enforce**: v
-**Restrict**: v
-**Check**: v
+Enforce | Restrict | Check |
+------- | -------- | ----- |
+v       | v        | v     |
 
 Example:
 
@@ -191,19 +195,17 @@ const guardNumber = (
 
 It's a type-guard that ensures the narrowed type of a value matches the expected type on runtime.
 
-**Role**: A development, compile, and run-time type narrower.
-**Scope**: Development, compile-time, and runtime.
+**Role**: A development, compile, and run-time type narrower.  
+**Scope**: Development, compile-time, and runtime.  
 **Purpose**:
 
 * Compile-time **restriction** and **enforcement**.
 * **Reduces** or **refines** the possible types of a value within a specific scope.
 * **Enables** precise typing based on context, such as conditional checks or type guards, affecting behavior at development, compile, and runtime.
 
-**Enforce**: v
-**Restrict**: v
-**Narrow**: v
-
-// Providing additional checks beyond type narrowing (e.g., custom business rules or value constraints).
+Enforce | Restrict | Narrow |
+------- | -------- | ------ |
+v       | v        | v      |
 
 Example:
 
