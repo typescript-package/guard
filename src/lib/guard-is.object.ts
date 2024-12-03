@@ -32,7 +32,7 @@ import {
   guardUndefined
 } from './index';
 // Interface.
-import { GuardIs } from '../interface/guard-is.interface';
+import { GuardIs } from '../interface';
 // `guardIs`.
 export const guardIs: GuardIs = Object.freeze({
   array: guardArray,
