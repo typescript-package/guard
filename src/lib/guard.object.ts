@@ -1,9 +1,68 @@
-// Import: Object.
-import { guardIs } from './guard-is.object';
-// Import: Interface.
-import { Guard } from '../interface/guard-interface';
-/**
- * @description
- * @type {Guard}
- */
-export const guard: Guard = Object.freeze({ ...guardIs });
+// Function.
+import {
+  guardArray,
+  guardBigInt,
+  guardBoolean,
+  guardClass,
+  guardDate,
+  guardDefined,
+  guardFalse,
+  guardFunction,
+  guardInstance,
+  guardKey,
+  guardNull,
+  guardNumber,
+  guardNumberBetween,
+  guardObject,
+  guardObjectKey,
+  guardObjectKeyIn,
+  guardObjectKeys,
+  guardObjectKeysIn,
+  guardObjectSomeKeys,
+  guardPrimitive,
+  guardRegExp,
+  guardString,
+  guardStringIncludes,
+  guardStringIncludesSome,
+  guardStringLength,
+  guardStringLengthBetween,
+  guardSymbol,
+  guardTrue,
+  guardType,
+  guardUndefined
+} from './index';
+// Interface.
+import { Guard } from '../interface';
+// `guardIs`.
+export const guard: Guard = Object.freeze({
+  array: guardArray,
+  bigint: guardBigInt,
+  boolean: guardBoolean,
+  class: guardClass,
+  date: guardDate,
+  defined: guardDefined,
+  false: guardFalse,
+  function: guardFunction,
+  instance: guardInstance,
+  key: guardKey,
+  null: guardNull,
+  number: guardNumber,
+  numberBetween: guardNumberBetween,
+  object: guardObject,
+  objectKey: guardObjectKey,
+  objectKeyIn: guardObjectKeyIn,
+  objectKeys: guardObjectKeys,
+  objectKeysIn: guardObjectKeysIn,
+  objectSomeKeys: guardObjectSomeKeys,
+  primitive: guardPrimitive,
+  regexp: guardRegExp,
+  string: guardString,
+  stringIncludes: guardStringIncludes,
+  stringIncludesSome: guardStringIncludesSome,
+  stringLength: guardStringLength,
+  stringLengthBetween: guardStringLengthBetween,
+  symbol: guardSymbol,
+  true: guardTrue,
+  type: guardType,
+  undefined: guardUndefined
+});
