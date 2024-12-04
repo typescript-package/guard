@@ -32,7 +32,7 @@ import {
   guardUndefined
 } from '../lib';
 // Export: Interface.
-export interface GuardIs {
+export interface Guard {
   /**
    * Guards the value to be an `array` of a generic type variable `Type`.
    */
