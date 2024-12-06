@@ -1,5 +1,5 @@
 {
-  "name": "@testing-package/guard",
+  "name": "@typescript-package/guard",
   "version": "1.0.0",
   "author": "wwwdev.io <dev@wwwdev.io>",
   "description": "Type-safe guards for guarding the value types in TypeScript.",
