@@ -2,7 +2,7 @@
   "name": "@testing-package/guard",
   "version": "1.0.0",
   "author": "wwwdev.io <dev@wwwdev.io>",
-  "description": "Type-safe guards for validating value types in TypeScript.",
+  "description": "Type-safe guards for guarding the value types in TypeScript.",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
